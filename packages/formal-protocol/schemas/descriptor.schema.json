@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Descriptor Schema",
+  "type": "object",
+  "$defs": {
+    "Descriptor": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "protocolVersion",
+        "backendKind",
+        "languages",
+        "capabilities",
+        "transport"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "protocolVersion": {
+          "type": "string"
+        },
+        "backendKind": {
+          "type": "string"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "transport": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "endpoint": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

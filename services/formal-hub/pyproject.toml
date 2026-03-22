@@ -1,0 +1,7 @@
+[project]
+name = "formal-hub"
+version = "0.1.0"
+description = "Reference-only FWP hub for conformance and seam validation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []

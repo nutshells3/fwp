@@ -1,0 +1,164 @@
+{
+  "backendDescriptor": {
+    "backendId": "isabelle-local",
+    "kind": "isabelle",
+    "displayName": "Isabelle",
+    "version": "0.1.0",
+    "protocolVersion": "2026-03-21",
+    "languages": [
+      "isabelle"
+    ],
+    "capabilities": {
+      "workspaceDiscovery": true,
+      "documentSync": {
+        "mode": "incremental"
+      },
+      "buildTargets": true,
+      "queries": {
+        "goals": true,
+        "hover": true,
+        "definition": true,
+        "type": true,
+        "dependencies": true,
+        "diagnostics": true,
+        "status": true
+      },
+      "probes": {
+        "counterexample": true,
+        "proofSearch": true,
+        "replay": true,
+        "premiseDeletion": true,
+        "conclusionPerturbation": true,
+        "consistencyCheck": false,
+        "dependencySlice": true,
+        "buildReplay": true
+      },
+      "auditSignals": {
+        "trustFrontier": true,
+        "rawBackendPayload": true,
+        "contractPack": true
+      },
+      "subscriptions": {
+        "progress": true,
+        "diagnostics": true,
+        "goals": true,
+        "audit": true
+      },
+      "runGovernance": {
+        "supports_run_jobs": true,
+        "supports_cancel": true,
+        "supports_kill": true,
+        "supports_heartbeat_budget": false,
+        "supports_progress_events": true,
+        "supports_raw_backend_handles": false,
+        "require_explicit_budget": true,
+        "max_concurrent_runs": 4,
+        "max_queued_runs": 0
+      },
+      "experimental": {
+        "backend/isabelle/nativeExtensions": true
+      }
+    },
+    "transport": {
+      "kind": "stdio"
+    },
+    "argv": [
+      "python",
+      "-m",
+      "isabelle_adapter"
+    ]
+  },
+  "workspaceHandle": {
+    "workspaceId": "ws_demo",
+    "rootUri": "file:///demo",
+    "backendId": "isabelle-local",
+    "connectionSource": "descriptor",
+    "openedAt": "2026-03-21T00:00:00Z"
+  },
+  "documentHandle": {
+    "documentId": "doc_main_thy",
+    "workspaceId": "ws_demo",
+    "uri": "file:///demo/Main.thy",
+    "languageId": "isabelle",
+    "version": 1,
+    "syncMode": "incremental"
+  },
+  "targetRef": {
+    "kind": "theorem",
+    "ref": "Main.demo",
+    "workspaceId": "ws_demo"
+  },
+  "snapshotRef": {
+    "snapshotId": "snap_doc_main_thy_1",
+    "workspaceId": "ws_demo",
+    "documentId": "doc_main_thy",
+    "backendOpaqueRef": "isabelle:snap_doc_main_thy_1"
+  },
+  "goalState": {
+    "goalId": "goal_1",
+    "summary": "1. True",
+    "facts": [
+      "simp"
+    ]
+  },
+  "diagnostic": {
+    "severity": "warning",
+    "message": "contains sorry",
+    "uri": "file:///demo/Main.thy"
+  },
+  "dependencySlice": {
+    "target": "Main.demo",
+    "dependencies": [
+      "Main",
+      "simp"
+    ]
+  },
+  "protocolError": {
+    "code": "CapabilityError",
+    "message": "unsupported probe",
+    "retryable": false,
+    "backendKind": "lean",
+    "correlationId": "req-1"
+  },
+  "buildUpdate": {
+    "workspaceId": "ws_demo",
+    "status": "running",
+    "progress": 50
+  },
+  "goalsUpdate": {
+    "workspaceId": "ws_demo",
+    "goals": [
+      {
+        "goalId": "goal_1",
+        "summary": "1. True",
+        "facts": [
+          "simp"
+        ]
+      }
+    ]
+  },
+  "diagnosticsUpdate": {
+    "workspaceId": "ws_demo",
+    "diagnostics": [
+      {
+        "severity": "warning",
+        "message": "contains sorry",
+        "uri": "file:///demo/Main.thy"
+      }
+    ]
+  },
+  "probeUpdate": {
+    "workspaceId": "ws_demo",
+    "probeRunId": "probe_isabelle_proofSearch",
+    "status": "completed"
+  },
+  "auditUpdate": {
+    "workspaceId": "ws_demo",
+    "signals": [
+      {
+        "kind": "trustFrontier",
+        "status": "trusted"
+      }
+    ]
+  }
+}

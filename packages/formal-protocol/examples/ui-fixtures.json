@@ -1,0 +1,22 @@
+{
+  "fixtures": [
+    {
+      "id": "isabelle-main",
+      "title": "Isabelle Main",
+      "backend": "isabelle",
+      "transcript": "../../../packages/formal-protocol/examples/transcripts/05-query-goals-isabelle.json"
+    },
+    {
+      "id": "lean-main",
+      "title": "Lean Main",
+      "backend": "lean",
+      "transcript": "../../../packages/formal-protocol/examples/transcripts/06-query-diagnostics-lean.json"
+    },
+    {
+      "id": "rocq-run",
+      "title": "Rocq Run",
+      "backend": "rocq",
+      "transcript": "../../../packages/formal-protocol/examples/transcripts/13-run-kill-rocq.json"
+    }
+  ]
+}

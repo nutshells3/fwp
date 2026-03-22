@@ -1,0 +1,114 @@
+{
+  "name": "run-cancel-lean",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 12,
+        "method": "run.start",
+        "params": {
+          "workspaceId": "ws_lean",
+          "backendId": "lean-local",
+          "kind": "search",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.long"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          }
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.start",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 12,
+        "result": {
+          "runId": "run_lean",
+          "backend": "lean",
+          "kind": "search",
+          "status": "running",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 5,
+            "message": "run created"
+          },
+          "signals": [],
+          "artifactRefs": []
+        }
+      }
+    },
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 13,
+        "method": "run.cancel",
+        "params": {
+          "runId": "run_lean"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.cancel",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 13,
+        "result": {
+          "runId": "run_lean",
+          "backend": "lean",
+          "kind": "search",
+          "status": "aborted.user_requested",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z",
+            "endedAt": "2026-03-21T00:00:01Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 100,
+            "message": "cancelled"
+          },
+          "signals": [
+            {
+              "kind": "abort.user_requested"
+            }
+          ],
+          "artifactRefs": []
+        }
+      }
+    }
+  ]
+}

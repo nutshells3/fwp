@@ -1,0 +1,7 @@
+[project]
+name = "fwp-mcp-bridge"
+version = "0.1.0"
+description = "FWP MCP bridge."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []

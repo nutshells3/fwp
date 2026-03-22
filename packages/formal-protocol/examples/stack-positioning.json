@@ -1,0 +1,39 @@
+{
+  "layerOrder": [
+    "proof-assistant",
+    "FWP",
+    "formal-claim",
+    "IDE-or-product-shell"
+  ],
+  "repoPosition": "FWP",
+  "owns": [
+    "backend-neutral proof protocol",
+    "job submission, polling, cancel, and kill semantics",
+    "workspace, session, artifact, and export contracts",
+    "transport to local or remote proof hosts"
+  ],
+  "doesNotOwn": [
+    "claim graphs",
+    "assurance profiles",
+    "promotion semantics",
+    "product shell UX",
+    "proof-host toolchain lifecycle at product scale"
+  ],
+  "allowedDependencies": {
+    "upstreamClients": [
+      "formal-claim"
+    ],
+    "downstreamHosts": [
+      "proof-assistant"
+    ],
+    "bridges": [
+      "MCP"
+    ]
+  },
+  "referenceSurfaces": {
+    "packages/fwp-client": "canonical upper seam package for formal-claim style callers",
+    "apps/ide-shell": "reference client and fixture harness only",
+    "integrations/*-adapter": "reference adapter implementations for protocol validation",
+    "services/isabelle-runner": "development proof-host shim, not the canonical production proof-assistant owner"
+  }
+}

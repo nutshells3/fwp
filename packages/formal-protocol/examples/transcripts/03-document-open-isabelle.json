@@ -1,0 +1,35 @@
+{
+  "name": "document-open-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "method": "document/open",
+        "params": {
+          "workspaceId": "ws_demo",
+          "uri": "file:///demo/Main.thy",
+          "languageId": "isabelle",
+          "text": "theory Main imports Main begin theorem demo: True by simp end"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "document/open",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": {
+          "documentId": "doc_main_thy",
+          "workspaceId": "ws_demo",
+          "uri": "file:///demo/Main.thy",
+          "languageId": "isabelle",
+          "version": 1,
+          "syncMode": "incremental"
+        }
+      }
+    }
+  ]
+}

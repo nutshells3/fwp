@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Run Governance Schemas",
+  "type": "object",
+  "$defs": {
+    "RunBudget": {
+      "type": "object",
+      "required": [
+        "wall_ms",
+        "idle_ms",
+        "cancel_grace_ms",
+        "max_rss_mb",
+        "max_output_bytes",
+        "max_diag_count",
+        "max_children",
+        "max_restarts"
+      ],
+      "properties": {
+        "wall_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "idle_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cancel_grace_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_rss_mb": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_output_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_diag_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_children": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_restarts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "backendHints": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "RunStartParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "backendId",
+        "kind",
+        "target",
+        "budget"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "backendId": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "budget": {
+          "type": "object",
+          "required": [
+            "wall_ms",
+            "idle_ms",
+            "cancel_grace_ms",
+            "max_rss_mb",
+            "max_output_bytes",
+            "max_diag_count",
+            "max_children",
+            "max_restarts"
+          ],
+          "properties": {
+            "wall_ms": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "idle_ms": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "cancel_grace_ms": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_rss_mb": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_output_bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_diag_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_children": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_restarts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "backendHints": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "RunPollParams": {
+      "type": "object",
+      "required": [
+        "runId"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RunStatus": {
+      "type": "object",
+      "required": [
+        "runId",
+        "backend",
+        "kind",
+        "status",
+        "timestamps",
+        "budget",
+        "progress",
+        "signals",
+        "artifactRefs"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string"
+        },
+        "backend": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "timestamps": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "budget": {
+          "type": "object",
+          "required": [
+            "wall_ms",
+            "idle_ms",
+            "cancel_grace_ms",
+            "max_rss_mb",
+            "max_output_bytes",
+            "max_diag_count",
+            "max_children",
+            "max_restarts"
+          ],
+          "properties": {
+            "wall_ms": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "idle_ms": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "cancel_grace_ms": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_rss_mb": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_output_bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_diag_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_children": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_restarts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "backendHints": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "progress": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "artifactRefs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "artifactId",
+              "kind",
+              "uri"
+            ],
+            "properties": {
+              "artifactId": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RunLogsResult": {
+      "type": "object",
+      "required": [
+        "runId",
+        "logs"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RunArtifactsResult": {
+      "type": "object",
+      "required": [
+        "runId",
+        "artifacts"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "artifactId",
+              "kind",
+              "uri"
+            ],
+            "properties": {
+              "artifactId": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

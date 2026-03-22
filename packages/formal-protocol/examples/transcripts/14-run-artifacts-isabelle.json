@@ -1,0 +1,34 @@
+{
+  "name": "run-artifacts-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 14,
+        "method": "run.artifacts",
+        "params": {
+          "runId": "run_done"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.artifacts",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 14,
+        "result": {
+          "runId": "run_done",
+          "artifacts": [
+            {
+              "artifactId": "artifact_postmortem",
+              "kind": "postmortem",
+              "uri": "artifact://postmortem"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

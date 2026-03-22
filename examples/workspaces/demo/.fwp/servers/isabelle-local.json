@@ -1,0 +1,68 @@
+{
+  "name": "isabelle-local",
+  "version": "0.1.0",
+  "protocolVersion": "2026-03-21",
+  "backendKind": "isabelle",
+  "languages": [
+    "isabelle"
+  ],
+  "capabilities": {
+    "workspaceDiscovery": true,
+    "documentSync": {
+      "mode": "incremental"
+    },
+    "buildTargets": true,
+    "queries": {
+      "goals": true,
+      "hover": true,
+      "definition": true,
+      "type": true,
+      "dependencies": true,
+      "diagnostics": true,
+      "status": true
+    },
+    "probes": {
+      "counterexample": true,
+      "proofSearch": true,
+      "replay": true,
+      "premiseDeletion": true,
+      "conclusionPerturbation": true,
+      "consistencyCheck": false,
+      "dependencySlice": true,
+      "buildReplay": true
+    },
+    "auditSignals": {
+      "trustFrontier": true,
+      "rawBackendPayload": true,
+      "contractPack": true
+    },
+    "subscriptions": {
+      "progress": true,
+      "diagnostics": true,
+      "goals": true,
+      "audit": true
+    },
+    "runGovernance": {
+      "supports_run_jobs": true,
+      "supports_cancel": true,
+      "supports_kill": true,
+      "supports_heartbeat_budget": false,
+      "supports_progress_events": true,
+      "supports_raw_backend_handles": false,
+      "require_explicit_budget": true,
+      "max_concurrent_runs": 4,
+      "max_queued_runs": 0
+    },
+    "experimental": {
+      "backend/isabelle/nativeExtensions": true
+    }
+  },
+  "transport": {
+    "kind": "stdio"
+  },
+  "argv": [
+    "python",
+    "-m",
+    "isabelle_adapter"
+  ]
+}

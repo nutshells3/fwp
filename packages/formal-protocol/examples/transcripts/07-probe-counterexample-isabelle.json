@@ -1,0 +1,62 @@
+{
+  "name": "probe-counterexample-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 7,
+        "method": "probe/run",
+        "params": {
+          "workspaceId": "ws_demo",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          },
+          "kind": "counterexample",
+          "backend": {
+            "kind": "isabelle"
+          },
+          "implementation": {
+            "tool": "nitpick"
+          },
+          "options": {
+            "timeoutMs": 8000
+          }
+        }
+      }
+    },
+    {
+      "kind": "notification",
+      "message": {
+        "jsonrpc": "2.0",
+        "method": "probe/update",
+        "params": {
+          "workspaceId": "ws_demo",
+          "probeRunId": "probe_1",
+          "status": "completed"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "probe/run",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 7,
+        "result": {
+          "probeRunId": "probe_1",
+          "kind": "counterexample",
+          "status": "completed",
+          "summary": "No counterexample found",
+          "normalizedResult": {
+            "outcome": "none"
+          },
+          "rawPayload": {
+            "tool": "nitpick"
+          }
+        }
+      }
+    }
+  ]
+}

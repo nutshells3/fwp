@@ -1,0 +1,66 @@
+{
+  "name": "audit-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 9,
+        "method": "audit/run",
+        "params": {
+          "workspaceId": "ws_demo",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          },
+          "include": [
+            "trustFrontier",
+            "dependencySlice",
+            "contractPack"
+          ]
+        }
+      }
+    },
+    {
+      "kind": "notification",
+      "message": {
+        "jsonrpc": "2.0",
+        "method": "audit/update",
+        "params": {
+          "workspaceId": "ws_demo",
+          "signals": [
+            {
+              "kind": "trustFrontier",
+              "status": "trusted"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "audit/run",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 9,
+        "result": {
+          "workspaceId": "ws_demo",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          },
+          "signals": [
+            {
+              "kind": "trustFrontier",
+              "status": "trusted"
+            }
+          ],
+          "contractPackRef": "contract-pack://main-demo",
+          "rawPayload": {
+            "backend": "isabelle"
+          }
+        }
+      }
+    }
+  ]
+}

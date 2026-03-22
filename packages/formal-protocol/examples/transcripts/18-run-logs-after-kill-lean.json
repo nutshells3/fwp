@@ -1,0 +1,33 @@
+{
+  "name": "run-logs-after-kill-lean",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 23,
+        "method": "run.logs",
+        "params": {
+          "runId": "run_stubborn"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.logs",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 23,
+        "result": {
+          "runId": "run_stubborn",
+          "logs": [
+            "run run_stubborn created",
+            "cooperative cancel timed out; escalation required",
+            "killed",
+            "run killed after escalation"
+          ]
+        }
+      }
+    }
+  ]
+}

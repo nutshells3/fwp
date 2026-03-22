@@ -1,0 +1,64 @@
+{
+  "name": "build-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "method": "build/run",
+        "params": {
+          "workspaceId": "ws_demo",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          }
+        }
+      }
+    },
+    {
+      "kind": "notification",
+      "message": {
+        "jsonrpc": "2.0",
+        "method": "build/update",
+        "params": {
+          "workspaceId": "ws_demo",
+          "status": "running",
+          "progress": 50
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "build/run",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "result": {
+          "status": "ok",
+          "artifacts": [
+            {
+              "artifactId": "artifact_build_log",
+              "kind": "build-log",
+              "uri": "artifact://build/log"
+            }
+          ],
+          "rawPayload": {
+            "backend": "isabelle",
+            "tool": "build"
+          }
+        }
+      }
+    }
+  ]
+}

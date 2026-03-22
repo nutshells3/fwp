@@ -1,0 +1,65 @@
+{
+  "name": "probe-proof-search-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 8,
+        "method": "probe/run",
+        "params": {
+          "workspaceId": "ws_demo",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          },
+          "kind": "proofSearch",
+          "backend": {
+            "kind": "isabelle"
+          },
+          "implementation": {
+            "tool": "sledgehammer"
+          },
+          "options": {
+            "timeoutMs": 5000
+          }
+        }
+      }
+    },
+    {
+      "kind": "notification",
+      "message": {
+        "jsonrpc": "2.0",
+        "method": "probe/update",
+        "params": {
+          "workspaceId": "ws_demo",
+          "probeRunId": "probe_2",
+          "status": "completed"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "probe/run",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 8,
+        "result": {
+          "probeRunId": "probe_2",
+          "kind": "proofSearch",
+          "status": "completed",
+          "summary": "Found candidate proof",
+          "normalizedResult": {
+            "outcome": "candidate",
+            "steps": [
+              "simp"
+            ]
+          },
+          "rawPayload": {
+            "tool": "sledgehammer"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "name": "run-cancel-escalate-kill-lean",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 20,
+        "method": "run.start",
+        "params": {
+          "workspaceId": "ws_lean",
+          "backendId": "lean-local",
+          "kind": "search",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.stubborn"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          }
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.start",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 20,
+        "result": {
+          "runId": "run_stubborn",
+          "backend": "lean",
+          "kind": "search",
+          "status": "running",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 5,
+            "message": "run created"
+          },
+          "signals": [],
+          "artifactRefs": []
+        }
+      }
+    },
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 21,
+        "method": "run.cancel",
+        "params": {
+          "runId": "run_stubborn"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.cancel",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 21,
+        "result": {
+          "runId": "run_stubborn",
+          "backend": "lean",
+          "kind": "search",
+          "status": "running",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 5,
+            "message": "cancel grace exceeded; kill required"
+          },
+          "signals": [
+            {
+              "kind": "abort.escalation_pending"
+            }
+          ],
+          "artifactRefs": []
+        }
+      }
+    },
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 22,
+        "method": "run.kill",
+        "params": {
+          "runId": "run_stubborn"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.kill",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 22,
+        "result": {
+          "runId": "run_stubborn",
+          "backend": "lean",
+          "kind": "search",
+          "status": "killed",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z",
+            "endedAt": "2026-03-21T00:00:06Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 100,
+            "message": "killed"
+          },
+          "signals": [
+            {
+              "kind": "resource.child_process_exceeded"
+            }
+          ],
+          "artifactRefs": [
+            {
+              "artifactId": "run_stubborn_postmortem",
+              "kind": "postmortem",
+              "uri": "artifact://runs/run_stubborn/postmortem"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

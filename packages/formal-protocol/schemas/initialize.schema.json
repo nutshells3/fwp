@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Initialize Schemas",
+  "type": "object",
+  "$defs": {
+    "InitializeParams": {
+      "type": "object",
+      "required": [
+        "protocolVersion",
+        "clientInfo",
+        "capabilities"
+      ],
+      "properties": {
+        "protocolVersion": {
+          "type": "string",
+          "pattern": "\\d{4}-\\d{2}-\\d{2}"
+        },
+        "clientInfo": {
+          "type": "object",
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "InitializeResult": {
+      "type": "object",
+      "required": [
+        "protocolVersion",
+        "serverInfo",
+        "capabilities"
+      ],
+      "properties": {
+        "protocolVersion": {
+          "type": "string",
+          "pattern": "\\d{4}-\\d{2}-\\d{2}"
+        },
+        "serverInfo": {
+          "type": "object",
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

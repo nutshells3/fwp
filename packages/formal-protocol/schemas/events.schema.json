@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Event Schemas",
+  "type": "object",
+  "$defs": {
+    "BuildUpdateParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "status",
+        "progress"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "progress": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "GoalsUpdateParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "goals"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "goals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "goalId",
+              "summary",
+              "facts"
+            ],
+            "properties": {
+              "goalId": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "facts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DiagnosticsUpdateParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "diagnostics"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "severity",
+              "message",
+              "uri"
+            ],
+            "properties": {
+              "severity": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeUpdateParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "probeRunId",
+        "status"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "probeRunId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuditUpdateParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "signals"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

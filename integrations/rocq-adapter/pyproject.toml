@@ -1,0 +1,7 @@
+[project]
+name = "rocq-adapter"
+version = "0.1.0"
+description = "FWP Rocq adapter."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []

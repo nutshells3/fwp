@@ -1,0 +1,7 @@
+[project]
+name = "lean-adapter"
+version = "0.1.0"
+description = "FWP Lean adapter."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []

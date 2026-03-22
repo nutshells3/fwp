@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FWP IDE Shell</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="fixtures">
+        <h1>FWP IDE Shell</h1>
+        <p>Transcript-driven protocol fixture mode.</p>
+        <div id="fixture-list" class="fixture-list"></div>
+      </aside>
+      <section class="workspace">
+        <header class="workspace-header">
+          <div>
+            <h2 id="fixture-title">Fixture</h2>
+            <p id="backend-name">backend</p>
+          </div>
+        </header>
+        <section class="panels">
+          <article><h3>Goals</h3><pre id="goals-panel"></pre></article>
+          <article><h3>Diagnostics</h3><pre id="diagnostics-panel"></pre></article>
+          <article><h3>Build</h3><pre id="build-panel"></pre></article>
+          <article><h3>Probe</h3><pre id="probe-panel"></pre></article>
+          <article><h3>Audit</h3><pre id="audit-panel"></pre></article>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

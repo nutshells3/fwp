@@ -1,0 +1,455 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Method Schemas",
+  "type": "object",
+  "$defs": {
+    "EmptyParams": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "WorkspaceIdParams": {
+      "type": "object",
+      "required": [
+        "workspaceId"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BackendIdParams": {
+      "type": "object",
+      "required": [
+        "backendId"
+      ],
+      "properties": {
+        "backendId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BackendDiscoverParams": {
+      "type": "object",
+      "required": [
+        "rootUri"
+      ],
+      "properties": {
+        "rootUri": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "WorkspaceOpenParams": {
+      "type": "object",
+      "required": [
+        "rootUri",
+        "backendId"
+      ],
+      "properties": {
+        "rootUri": {
+          "type": "string"
+        },
+        "backendId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "WorkspaceConfigureParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "options"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "DocumentOpenParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "uri",
+        "languageId",
+        "text"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "languageId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DocumentChangeParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "documentId",
+        "text"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DocumentSaveParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "documentId"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DocumentCloseParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "documentId"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BuildRunParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "target"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "BuildCancelParams": {
+      "type": "object",
+      "required": [
+        "workspaceId"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArtifactExportParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "artifactId"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "artifactId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArtifactReadParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "artifactId"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "artifactId": {
+          "type": "string"
+        },
+        "maxBytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "target"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeRunParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "target",
+        "kind"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "kind": {
+          "type": "string"
+        },
+        "backend": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "implementation": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeCancelParams": {
+      "type": "object",
+      "required": [
+        "probeRunId"
+      ],
+      "properties": {
+        "probeRunId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeResultsParams": {
+      "type": "object",
+      "required": [
+        "probeRunId"
+      ],
+      "properties": {
+        "probeRunId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuditRunParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "target",
+        "include"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuditSignalsParams": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "target"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "EventSubscribeParams": {
+      "type": "object",
+      "required": [
+        "topic"
+      ],
+      "properties": {
+        "topic": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EventUnsubscribeParams": {
+      "type": "object",
+      "required": [
+        "subscriptionId"
+      ],
+      "properties": {
+        "subscriptionId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

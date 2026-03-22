@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Entity Schemas",
+  "type": "object",
+  "$defs": {
+    "BackendDescriptor": {
+      "type": "object",
+      "required": [
+        "backendId",
+        "kind",
+        "displayName",
+        "version",
+        "protocolVersion",
+        "languages",
+        "capabilities",
+        "transport"
+      ],
+      "properties": {
+        "backendId": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "protocolVersion": {
+          "type": "string"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "transport": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "WorkspaceHandle": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "rootUri",
+        "backendId",
+        "connectionSource",
+        "openedAt"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "rootUri": {
+          "type": "string"
+        },
+        "backendId": {
+          "type": "string"
+        },
+        "connectionSource": {
+          "type": "string"
+        },
+        "openedAt": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DocumentHandle": {
+      "type": "object",
+      "required": [
+        "documentId",
+        "workspaceId",
+        "uri",
+        "languageId",
+        "version",
+        "syncMode"
+      ],
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "workspaceId": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "languageId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "syncMode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TargetRef": {
+      "type": "object",
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "ref": {
+          "type": "string"
+        },
+        "workspaceId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "SnapshotRef": {
+      "type": "object",
+      "required": [
+        "snapshotId",
+        "workspaceId"
+      ],
+      "properties": {
+        "snapshotId": {
+          "type": "string"
+        },
+        "workspaceId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "backendOpaqueRef": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "run-timeout-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 11,
+        "method": "run.start",
+        "params": {
+          "workspaceId": "ws_demo",
+          "backendId": "isabelle-local",
+          "kind": "build",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          },
+          "budget": {
+            "wall_ms": 1000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          }
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.start",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 11,
+        "result": {
+          "runId": "run_timeout",
+          "backend": "isabelle",
+          "kind": "build",
+          "status": "timeout.wall",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z",
+            "endedAt": "2026-03-21T00:00:01Z"
+          },
+          "budget": {
+            "wall_ms": 1000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 100,
+            "message": "wall timeout"
+          },
+          "signals": [
+            {
+              "kind": "timeout.wall"
+            }
+          ],
+          "artifactRefs": []
+        }
+      }
+    }
+  ]
+}

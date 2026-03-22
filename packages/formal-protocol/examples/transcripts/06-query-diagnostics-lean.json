@@ -1,0 +1,54 @@
+{
+  "name": "query-diagnostics-lean",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 6,
+        "method": "query/diagnostics",
+        "params": {
+          "workspaceId": "ws_lean",
+          "target": {
+            "kind": "document",
+            "ref": "Main.lean"
+          }
+        }
+      }
+    },
+    {
+      "kind": "notification",
+      "message": {
+        "jsonrpc": "2.0",
+        "method": "diagnostics/update",
+        "params": {
+          "workspaceId": "ws_lean",
+          "diagnostics": [
+            {
+              "severity": "warning",
+              "message": "contains admit",
+              "uri": "file:///demo/Main.lean"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "query/diagnostics",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 6,
+        "result": {
+          "diagnostics": [
+            {
+              "severity": "warning",
+              "message": "contains admit",
+              "uri": "file:///demo/Main.lean"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

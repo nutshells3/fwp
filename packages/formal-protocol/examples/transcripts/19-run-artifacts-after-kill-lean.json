@@ -1,0 +1,34 @@
+{
+  "name": "run-artifacts-after-kill-lean",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 24,
+        "method": "run.artifacts",
+        "params": {
+          "runId": "run_stubborn"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.artifacts",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 24,
+        "result": {
+          "runId": "run_stubborn",
+          "artifacts": [
+            {
+              "artifactId": "run_stubborn_postmortem",
+              "kind": "postmortem",
+              "uri": "artifact://runs/run_stubborn/postmortem"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

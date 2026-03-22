@@ -1,0 +1,32 @@
+{
+  "name": "workspace-open-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "workspace/open",
+        "params": {
+          "rootUri": "file:///demo",
+          "backendId": "isabelle-local"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "workspace/open",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "workspaceId": "ws_demo",
+          "rootUri": "file:///demo",
+          "backendId": "isabelle-local",
+          "connectionSource": "descriptor",
+          "openedAt": "2026-03-21T00:00:00Z"
+        }
+      }
+    }
+  ]
+}

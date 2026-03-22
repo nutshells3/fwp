@@ -1,0 +1,31 @@
+{
+  "name": "artifact-read-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 10,
+        "method": "artifact/read",
+        "params": {
+          "workspaceId": "ws_demo",
+          "artifactId": "artifact_build_log",
+          "maxBytes": 2048
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "artifact/read",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 10,
+        "result": {
+          "artifactId": "artifact_build_log",
+          "content": "Build succeeded",
+          "truncated": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,703 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FWP Result Schemas",
+  "type": "object",
+  "$defs": {
+    "AckResult": {
+      "type": "object",
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ShutdownResult": {
+      "type": "object",
+      "required": [
+        "shutdown"
+      ],
+      "properties": {
+        "shutdown": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExitResult": {
+      "type": "object",
+      "required": [
+        "exit"
+      ],
+      "properties": {
+        "exit": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PingResult": {
+      "type": "object",
+      "required": [
+        "pong",
+        "protocolVersion"
+      ],
+      "properties": {
+        "pong": {
+          "type": "boolean"
+        },
+        "protocolVersion": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BackendCapabilitiesResult": {
+      "type": "object",
+      "required": [
+        "backendId",
+        "capabilities"
+      ],
+      "properties": {
+        "backendId": {
+          "type": "string"
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "WorkspaceConfigureResult": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "configured",
+        "options"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "configured": {
+          "type": "boolean"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "WorkspaceCloseResult": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "closed"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "closed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DocumentCloseResult": {
+      "type": "object",
+      "required": [
+        "documentId",
+        "closed"
+      ],
+      "properties": {
+        "documentId": {
+          "type": "string"
+        },
+        "closed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TargetListResult": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "workspaceId": {
+            "type": "string"
+          },
+          "documentId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "BuildCancelResult": {
+      "type": "object",
+      "required": [
+        "cancelled",
+        "reason"
+      ],
+      "properties": {
+        "cancelled": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArtifactListResult": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifactId",
+          "kind",
+          "uri"
+        ],
+        "properties": {
+          "artifactId": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "GoalState": {
+      "type": "object",
+      "required": [
+        "goalId",
+        "summary",
+        "facts"
+      ],
+      "properties": {
+        "goalId": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "Diagnostic": {
+      "type": "object",
+      "required": [
+        "severity",
+        "message",
+        "uri"
+      ],
+      "properties": {
+        "severity": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "DependencySlice": {
+      "type": "object",
+      "required": [
+        "target",
+        "dependencies"
+      ],
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "BuildRunResult": {
+      "type": "object",
+      "required": [
+        "status",
+        "artifacts",
+        "rawPayload"
+      ],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "artifactId",
+              "kind",
+              "uri"
+            ],
+            "properties": {
+              "artifactId": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "rawPayload": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArtifactExportResult": {
+      "type": "object",
+      "required": [
+        "artifactId",
+        "exportUri",
+        "kind"
+      ],
+      "properties": {
+        "artifactId": {
+          "type": "string"
+        },
+        "exportUri": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArtifactReadResult": {
+      "type": "object",
+      "required": [
+        "artifactId",
+        "content",
+        "truncated"
+      ],
+      "properties": {
+        "artifactId": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "truncated": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryGoalsResult": {
+      "type": "object",
+      "required": [
+        "goals"
+      ],
+      "properties": {
+        "goals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "goalId",
+              "summary",
+              "facts"
+            ],
+            "properties": {
+              "goalId": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "facts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryDiagnosticsResult": {
+      "type": "object",
+      "required": [
+        "diagnostics"
+      ],
+      "properties": {
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "severity",
+              "message",
+              "uri"
+            ],
+            "properties": {
+              "severity": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryHoverResult": {
+      "type": "object",
+      "required": [
+        "contents"
+      ],
+      "properties": {
+        "contents": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryDefinitionResult": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "definition"
+      ],
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryTypeResult": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "type"
+      ],
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryStatusResult": {
+      "type": "object",
+      "required": [
+        "target",
+        "status"
+      ],
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeRunResult": {
+      "type": "object",
+      "required": [
+        "probeRunId",
+        "kind",
+        "status",
+        "summary",
+        "normalizedResult",
+        "rawPayload"
+      ],
+      "properties": {
+        "probeRunId": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "normalizedResult": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "rawPayload": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeCancelResult": {
+      "type": "object",
+      "required": [
+        "probeRunId",
+        "cancelled"
+      ],
+      "properties": {
+        "probeRunId": {
+          "type": "string"
+        },
+        "cancelled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProbeResultsResult": {
+      "type": "object",
+      "required": [
+        "probeRunId",
+        "results"
+      ],
+      "properties": {
+        "probeRunId": {
+          "type": "string"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuditSignalBundle": {
+      "type": "object",
+      "required": [
+        "workspaceId",
+        "target",
+        "signals",
+        "contractPackRef",
+        "rawPayload"
+      ],
+      "properties": {
+        "workspaceId": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "workspaceId": {
+              "type": "string"
+            },
+            "documentId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "contractPackRef": {
+          "type": "string"
+        },
+        "rawPayload": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuditSignalsResult": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "AuditProfileResult": {
+      "type": "object",
+      "required": [
+        "status",
+        "signalCount",
+        "contractPackRef"
+      ],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "signalCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "contractPackRef": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuditContractPackResult": {
+      "type": "object",
+      "required": [
+        "contractPackRef"
+      ],
+      "properties": {
+        "contractPackRef": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EventSubscribeResult": {
+      "type": "object",
+      "required": [
+        "subscriptionId",
+        "topic"
+      ],
+      "properties": {
+        "subscriptionId": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EventUnsubscribeResult": {
+      "type": "object",
+      "required": [
+        "subscriptionId",
+        "unsubscribed",
+        "topic"
+      ],
+      "properties": {
+        "subscriptionId": {
+          "type": "string"
+        },
+        "unsubscribed": {
+          "type": "boolean"
+        },
+        "topic": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProtocolError": {
+      "type": "object",
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "backendKind": {
+          "type": "string"
+        },
+        "correlationId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

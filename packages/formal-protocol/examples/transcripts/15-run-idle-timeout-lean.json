@@ -1,0 +1,114 @@
+{
+  "name": "run-idle-timeout-lean",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 16,
+        "method": "run.start",
+        "params": {
+          "workspaceId": "ws_lean",
+          "backendId": "lean-local",
+          "kind": "search",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.stall"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          }
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.start",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 16,
+        "result": {
+          "runId": "run_idle",
+          "backend": "lean",
+          "kind": "search",
+          "status": "running",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 5,
+            "message": "run created"
+          },
+          "signals": [],
+          "artifactRefs": []
+        }
+      }
+    },
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 17,
+        "method": "run.poll",
+        "params": {
+          "runId": "run_idle"
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "run.poll",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 17,
+        "result": {
+          "runId": "run_idle",
+          "backend": "lean",
+          "kind": "search",
+          "status": "timeout.idle",
+          "timestamps": {
+            "startedAt": "2026-03-21T00:00:00Z",
+            "endedAt": "2026-03-21T00:00:03Z"
+          },
+          "budget": {
+            "wall_ms": 5000,
+            "idle_ms": 1000,
+            "cancel_grace_ms": 500,
+            "max_rss_mb": 512,
+            "max_output_bytes": 16384,
+            "max_diag_count": 128,
+            "max_children": 2,
+            "max_restarts": 0
+          },
+          "progress": {
+            "percent": 100,
+            "message": "idle timeout"
+          },
+          "signals": [
+            {
+              "kind": "timeout.idle"
+            }
+          ],
+          "artifactRefs": []
+        }
+      }
+    }
+  ]
+}

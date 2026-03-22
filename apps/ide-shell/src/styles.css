@@ -1,0 +1,68 @@
+:root {
+  --paper: #f5f0e6;
+  --ink: #182229;
+  --accent: #a5421a;
+  --panel: #fff9ee;
+  --line: #d6c5aa;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", serif;
+  background: radial-gradient(circle at top left, #fff7df, #efe1c3 50%, #d3be9a);
+  color: var(--ink);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.fixtures {
+  padding: 24px;
+  border-right: 1px solid var(--line);
+  background: rgba(255, 249, 238, 0.92);
+}
+
+.fixture-list {
+  display: grid;
+  gap: 10px;
+}
+
+.fixture-list button {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.workspace {
+  padding: 24px;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+article {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(24, 34, 41, 0.08);
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "query-goals-isabelle",
+  "steps": [
+    {
+      "kind": "request",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "method": "query/goals",
+        "params": {
+          "workspaceId": "ws_demo",
+          "target": {
+            "kind": "theorem",
+            "ref": "Main.demo"
+          }
+        }
+      }
+    },
+    {
+      "kind": "notification",
+      "message": {
+        "jsonrpc": "2.0",
+        "method": "goals/update",
+        "params": {
+          "workspaceId": "ws_demo",
+          "goals": [
+            {
+              "goalId": "goal_1",
+              "summary": "1. True",
+              "facts": [
+                "simp"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "response",
+      "forMethod": "query/goals",
+      "message": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "result": {
+          "goals": [
+            {
+              "goalId": "goal_1",
+              "summary": "1. True",
+              "facts": [
+                "simp"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

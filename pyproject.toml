@@ -1,0 +1,10 @@
+[project]
+name = "formal-workbench-protocol"
+version = "0.1.0"
+description = "Formal Workbench Protocol monorepo."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.uv]
+package = false
