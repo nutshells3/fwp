@@ -1,0 +1,1216 @@
+{
+  "protocolVersion": "2026-03-21",
+  "generatedAt": "2026-03-21",
+  "stepCount": 60,
+  "status": "done",
+  "steps": [
+    {
+      "id": "FWP-00-01",
+      "milestone": "FWP-00",
+      "title": "Gate protocol work until current assurance-core backlog is closed",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-00-01-post-core-gate.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-00-02",
+      "milestone": "FWP-00",
+      "title": "Freeze current backend-specific API names until adapter migration phase",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-00-02-api-freeze-policy.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-01-01",
+      "milestone": "FWP-01",
+      "title": "Write protocol charter and scope boundaries",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-01-01-charter-and-scope.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-01-02",
+      "milestone": "FWP-01",
+      "title": "Write protocol glossary and entity model",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-01-02-glossary-and-entity-model.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-01-03",
+      "milestone": "FWP-01",
+      "title": "Define protocol versioning policy and extension policy",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-01-03-versioning-and-extension-policy.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-01-04",
+      "milestone": "FWP-01",
+      "title": "Define threat model and trust boundaries for hub, adapters, and remote transports",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-01-04-threat-model-and-trust-boundaries.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-01",
+      "milestone": "FWP-02",
+      "title": "Create packages/formal-protocol package skeleton",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/pyproject.toml"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-02",
+      "milestone": "FWP-02",
+      "title": "Define JSON Schema for initialize and capability negotiation",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/initialize.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-03",
+      "milestone": "FWP-02",
+      "title": "Define JSON Schema for workspace, document, target, and snapshot objects",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/entities.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-04",
+      "milestone": "FWP-02",
+      "title": "Define JSON Schema for build, artifact, query, probe, and audit methods",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/methods.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-05",
+      "milestone": "FWP-02",
+      "title": "Define JSON Schema for normalized result objects and protocol errors",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/results.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-06",
+      "milestone": "FWP-02",
+      "title": "Define workspace discovery descriptor schema",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/descriptor.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-07",
+      "milestone": "FWP-02",
+      "title": "Create golden protocol examples and transcripts",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/01-initialize-isabelle.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/schema-fixtures.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_transcript_replay.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-02-08",
+      "milestone": "FWP-02",
+      "title": "Add schema validation and transcript conformance tests to root CI",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "scripts/dev/check_repo.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/schema_tools.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_transcript_replay.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-03-01",
+      "milestone": "FWP-03",
+      "title": "Create services/formal-hub service skeleton",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/pyproject.toml"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/__init__.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_hub_routing.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-03-02",
+      "milestone": "FWP-03",
+      "title": "Implement protocol session manager and request router",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/server.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_hub_routing.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-03-03",
+      "milestone": "FWP-03",
+      "title": "Implement adapter registry and capability cache",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/adapter.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_hub_routing.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-03-04",
+      "milestone": "FWP-03",
+      "title": "Implement event/subscription channel for progress, diagnostics, goals, and audit updates",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/events.schema.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_transcript_replay.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-03-05",
+      "milestone": "FWP-03",
+      "title": "Implement transcript recorder and replay harness for hub-level tests",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/transcripts.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/09-audit-isabelle.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_transcript_replay.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-03-06",
+      "milestone": "FWP-03",
+      "title": "Add formal backend adapter interface contract in Python",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/src/isabelle_adapter/adapter.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_isabelle_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-04-01",
+      "milestone": "FWP-04",
+      "title": "Create integrations/isabelle-adapter package by wrapping services/isabelle-runner",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/pyproject.toml"
+        },
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/src/isabelle_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_isabelle_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-04-02",
+      "milestone": "FWP-04",
+      "title": "Map Isabelle workspace/build/export/dump flow onto FWP build and artifact methods",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/src/isabelle_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/adapter.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_isabelle_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-04-03",
+      "milestone": "FWP-04",
+      "title": "Map theorem-local trust, Nitpick, Sledgehammer, and perturbation probes onto FWP probe methods",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/src/isabelle_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_isabelle_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-04-04",
+      "milestone": "FWP-04",
+      "title": "Expose audit bundle and contract-pack emission through Isabelle adapter",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/src/isabelle_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/09-audit-isabelle.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_isabelle_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-04-05",
+      "milestone": "FWP-04",
+      "title": "Add end-to-end hub + Isabelle adapter transcript tests",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/05-query-goals-isabelle.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_isabelle_e2e.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_transcript_replay.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-05-01",
+      "milestone": "FWP-05",
+      "title": "Create services/fwp-mcp-bridge service skeleton",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/pyproject.toml"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/src/fwp_mcp_bridge/bridge.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_bridge_security.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-05-02",
+      "milestone": "FWP-05",
+      "title": "Define bridge policy for which FWP methods may be exposed as MCP tools/resources",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-05-02-bridge-policy.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_bridge_security.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-05-03",
+      "milestone": "FWP-05",
+      "title": "Implement MCP tools for backend discovery, workspace open, probe run, artifact read, and audit run",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/src/fwp_mcp_bridge/bridge.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_bridge_security.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-05-04",
+      "milestone": "FWP-05",
+      "title": "Implement MCP resources for descriptors, golden transcripts, and selected artifact views",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/src/fwp_mcp_bridge/bridge.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/10-artifact-read-isabelle.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_bridge_security.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-05-05",
+      "milestone": "FWP-05",
+      "title": "Add bridge abuse tests for prompt-injection, over-broad file access, and raw payload leakage",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-05-02-bridge-policy.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_bridge_security.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_hub_robustness.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-01",
+      "milestone": "FWP-06",
+      "title": "Create integrations/lean-adapter package skeleton",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/lean-adapter/pyproject.toml"
+        },
+        {
+          "kind": "implementation",
+          "path": "integrations/lean-adapter/src/lean_adapter/adapter.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-02",
+      "milestone": "FWP-06",
+      "title": "Implement Lean workspace discovery and Lake-aware build mapping",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/lean-adapter/src/lean_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/descriptors/lean-local.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-03",
+      "milestone": "FWP-06",
+      "title": "Implement Lean document/query mapping through the Lean language server",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/lean-adapter/src/lean_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "examples/workspaces/demo/Main.lean"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-04",
+      "milestone": "FWP-06",
+      "title": "Define Lean probe surface and normalized result mapping",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/lean-adapter/src/lean_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/capability-matrix.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-05",
+      "milestone": "FWP-06",
+      "title": "Create integrations/rocq-adapter package skeleton",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/rocq-adapter/pyproject.toml"
+        },
+        {
+          "kind": "implementation",
+          "path": "integrations/rocq-adapter/src/rocq_adapter/adapter.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-06",
+      "milestone": "FWP-06",
+      "title": "Implement Rocq document/query mapping through rocq-lsp",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/rocq-adapter/src/rocq_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "examples/workspaces/demo/Main.v"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-07",
+      "milestone": "FWP-06",
+      "title": "Implement Rocq low-latency probe pathway using petanque/fcc-aware adapter hooks",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/rocq-adapter/src/rocq_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/capability-matrix.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-06-08",
+      "milestone": "FWP-06",
+      "title": "Add capability matrix and cross-backend compatibility tests for Isabelle, Lean, and Rocq",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-02-capability-matrix.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/capability-matrix.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_cross_backend.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-07-01",
+      "milestone": "FWP-07",
+      "title": "Create apps/ide-shell protocol driver abstraction",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/src/driver.js"
+        },
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/transcripts/test_ui_fixtures.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-07-02",
+      "milestone": "FWP-07",
+      "title": "Implement documents/diagnostics/goals panel against FWP only",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/src/app.js"
+        },
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/src/index.html"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/transcripts/test_ui_fixtures.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-07-03",
+      "milestone": "FWP-07",
+      "title": "Implement build/probe/audit panels against FWP only",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/src/app.js"
+        },
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/src/driver.js"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/transcripts/test_ui_fixtures.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-07-04",
+      "milestone": "FWP-07",
+      "title": "Add transcript-based UI fixtures for at least two backends",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/ui-fixtures.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "apps/ide-shell/README.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/transcripts/test_ui_fixtures.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-08-01",
+      "milestone": "FWP-08",
+      "title": "Write protocol reference manual and implementer guide",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-01-reference-manual.md"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-01-implementer-guide.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-08-02",
+      "milestone": "FWP-08",
+      "title": "Publish machine-readable capability matrix and compatibility table",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-02-capability-matrix.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/capability-matrix.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_cross_backend.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-08-03",
+      "milestone": "FWP-08",
+      "title": "Add protocol fuzzing and malformed-message robustness tests",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-03-robustness-evidence.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_hub_robustness.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-08-04",
+      "milestone": "FWP-08",
+      "title": "Add remote transport hardening for streamable HTTP mode",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-04-http-transport-hardening.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/server.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_hub_robustness.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-08-05",
+      "milestone": "FWP-08",
+      "title": "Cut FWP v0.1 release with schemas, hub, Isabelle adapter, MCP bridge, and one secondary backend in beta",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-08-05-v0.1-release.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "scripts/release/build_release_artifacts.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_release_artifacts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-01",
+      "milestone": "FWP-RG",
+      "title": "Define budgeted run lifecycle methods and terminal states",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-RG-01-run-governance.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/run-governance.schema.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-02",
+      "milestone": "FWP-RG",
+      "title": "Add RunBudget schema with wall, idle, grace, memory, output, and child-process limits",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/run-governance.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-03",
+      "milestone": "FWP-RG",
+      "title": "Add backend-specific budget hint extensions for search-heavy and heartbeat-limited backends",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/capability-matrix.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/protocol/test_protocol_contracts.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-04",
+      "milestone": "FWP-RG",
+      "title": "Define normalized divergence, timeout, resource, and user-abort signals",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/run-governance.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/16-run-no-progress-isabelle.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-05",
+      "milestone": "FWP-RG",
+      "title": "Define cooperative-cancel to hard-kill escalation policy",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-RG-01-run-governance.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-06",
+      "milestone": "FWP-RG",
+      "title": "Add run-governance capabilities to initialize and backend capability descriptors",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/capability-matrix.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-07",
+      "milestone": "FWP-RG",
+      "title": "Add normalized run status, progress, and artifact-log access model",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/run-governance.schema.json"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-08",
+      "milestone": "FWP-RG",
+      "title": "Implement hub-side run controller and bounded job registry",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-RG-01-run-governance.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "services/formal-hub/src/formal_hub/hub.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-09",
+      "milestone": "FWP-RG",
+      "title": "Map Isabelle adapter build, check, search, and probe execution onto run-governance contract",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/isabelle-adapter/src/isabelle_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/run-governance.schema.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-10",
+      "milestone": "FWP-RG",
+      "title": "Map Lean adapter build, check, and search execution onto run-governance contract",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "integrations/lean-adapter/src/lean_adapter/adapter.py"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/schemas/run-governance.schema.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/adapters/test_secondary_backend_e2e.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-11",
+      "milestone": "FWP-RG",
+      "title": "Expose run-governance methods through MCP bridge without leaking backend ownership",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "implementation",
+          "path": "services/fwp-mcp-bridge/src/fwp_mcp_bridge/bridge.py"
+        },
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-05-02-bridge-policy.md"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/security/test_bridge_security.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-12",
+      "milestone": "FWP-RG",
+      "title": "Add conformance fixtures and golden transcripts for timeout, cancel, kill, and post-run artifact access",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-RG-12-conformance-fixtures.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/examples/transcripts/19-run-artifacts-after-kill-lean.json"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    },
+    {
+      "id": "FWP-RG-13",
+      "milestone": "FWP-RG",
+      "title": "Add operator-facing safety defaults, queue limits, and release gates for governed runs",
+      "status": "done",
+      "evidence": [
+        {
+          "kind": "doc",
+          "path": "docs/protocol/FWP-RG-13-operator-defaults.md"
+        },
+        {
+          "kind": "implementation",
+          "path": "packages/formal-protocol/src/formal_protocol/assets.py"
+        },
+        {
+          "kind": "verification",
+          "path": "tests/conformance/test_run_governance.py"
+        }
+      ]
+    }
+  ]
+}

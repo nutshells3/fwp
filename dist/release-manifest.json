@@ -1,0 +1,116 @@
+{
+  "name": "fwp-v0.1.0",
+  "version": "0.1.0",
+  "protocolVersion": "2026-03-21",
+  "releaseDate": "2026-03-21",
+  "support": {
+    "stable": [
+      "formal-protocol",
+      "fwp-client",
+      "fwp-mcp-bridge"
+    ],
+    "beta": [
+      "formal-hub",
+      "isabelle-adapter",
+      "lean-adapter",
+      "rocq-adapter",
+      "ide-shell"
+    ],
+    "experimental": [
+      "backend escape hatch"
+    ]
+  },
+  "artifacts": [
+    {
+      "component": "formal-protocol",
+      "path": "packages/formal-protocol/schemas",
+      "kind": "schema-pack",
+      "support": "stable",
+      "layerRole": "FWP-core"
+    },
+    {
+      "component": "formal-protocol",
+      "path": "packages/formal-protocol/examples",
+      "kind": "example-pack",
+      "support": "stable",
+      "layerRole": "FWP-core"
+    },
+    {
+      "component": "fwp-client",
+      "path": "packages/fwp-client/src",
+      "kind": "client-sdk",
+      "support": "stable",
+      "layerRole": "FWP-client"
+    },
+    {
+      "component": "formal-hub",
+      "path": "services/formal-hub/src",
+      "kind": "reference-service",
+      "support": "beta",
+      "layerRole": "FWP-reference-proof-host"
+    },
+    {
+      "component": "fwp-mcp-bridge",
+      "path": "services/fwp-mcp-bridge/src",
+      "kind": "service",
+      "support": "stable",
+      "layerRole": "FWP-bridge"
+    },
+    {
+      "component": "isabelle-adapter",
+      "path": "integrations/isabelle-adapter/src",
+      "kind": "reference-adapter",
+      "support": "beta",
+      "layerRole": "FWP-reference-proof-host-adapter"
+    },
+    {
+      "component": "lean-adapter",
+      "path": "integrations/lean-adapter/src",
+      "kind": "reference-adapter",
+      "support": "beta",
+      "layerRole": "FWP-reference-proof-host-adapter"
+    },
+    {
+      "component": "rocq-adapter",
+      "path": "integrations/rocq-adapter/src",
+      "kind": "reference-adapter",
+      "support": "beta",
+      "layerRole": "FWP-reference-proof-host-adapter"
+    },
+    {
+      "component": "ide-shell",
+      "path": "apps/ide-shell/src",
+      "kind": "reference-client",
+      "support": "beta",
+      "layerRole": "FWP-reference-client"
+    },
+    {
+      "component": "docs",
+      "path": "docs/protocol",
+      "kind": "documentation",
+      "support": "stable",
+      "layerRole": "FWP-governance"
+    },
+    {
+      "component": "tests",
+      "path": "tests",
+      "kind": "verification",
+      "support": "stable",
+      "layerRole": "FWP-verification"
+    }
+  ],
+  "evidence": {
+    "stackPositioning": "docs/protocol/FWP-01-05-stack-positioning.md",
+    "proofClientSeam": "docs/protocol/FWP-01-06-proof-client-seam.md",
+    "referenceManual": "docs/protocol/FWP-08-01-reference-manual.md",
+    "implementerGuide": "docs/protocol/FWP-08-01-implementer-guide.md",
+    "capabilityMatrix": "docs/protocol/FWP-08-02-capability-matrix.md",
+    "robustness": "docs/protocol/FWP-08-03-robustness-evidence.md",
+    "httpHardening": "docs/protocol/FWP-08-04-http-transport-hardening.md",
+    "releaseBoundary": "docs/protocol/FWP-08-05-v0.1-release.md",
+    "milestoneCoverage": "dist/milestone-coverage.json",
+    "runGovernance": "docs/protocol/FWP-RG-01-run-governance.md",
+    "runFixtures": "docs/protocol/FWP-RG-12-conformance-fixtures.md",
+    "operatorDefaults": "docs/protocol/FWP-RG-13-operator-defaults.md"
+  }
+}
